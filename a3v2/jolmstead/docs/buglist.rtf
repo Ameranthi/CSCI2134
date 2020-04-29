@@ -1,0 +1,110 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red0\green0\blue0;
+\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c1\c1;\cssrgb\c100000\c100000\c99985\c0;\cssrgb\c0\c1\c1;
+\cssrgb\c100000\c100000\c99985\c0;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww28600\viewh15100\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf2 \cb3 Buglist.txt \
+\
+Bug list \
+\
+1)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf4 \cb5 FILE OR CLASS NAME: TimBot.java \
+METHOD: harvestSpresso()\
+LINE #s: 156\
+BUG DESCRIPTION: the operator is wrong energy level < 99 set to = 99 \
+BUG FIX: changed the operator to > 99  = 99 \
+\
+2)\
+FILE OR CLASS NAME: ChickenBot.java\
+METHOD: getNextMove()\
+LINE #s: 50\
+BUG DESCRIPTION: the operator is wrong >= should just be. > 0\
+BUG FIX: changed the boolean if statement to > 0\
+\
+3)\
+FILE OR CLASS NAME: BullyBot.java\
+METHOD: fireCannon()\
+LINE #s: 66\
+BUG DESCRIPTION: decrement j\'97however it should increment as j is assigned to 0 and not .length of the array\
+BUG FIX: changed to j++ so it will increment through the array \
+\
+4)\
+FILE OR CLASS NAME:  BullyBot.java\
+METHOD: fireCannon()\
+LINE #s: 67\
+BUG DESCRIPTION: energy level must be decremented after use of the cannon \
+BUG FIX: energylevel was changed to energylevel\'97 so it was decremented after use \
+\
+5)\
+FILE OR CLASS NAME: AngryBot.java \
+METHOD: getNextMove()\
+LINE #s: 48\
+BUG DESCRIPTION: it needs two energy to work however boolean expression was < 2\
+BUG FIX: changed to > 2\
+\
+6)\
+FILE OR CLASS NAME: SpressoBot.java\
+METHOD: getNextMove() \
+LINE #s:72 \
+BUG DESCRIPTION: needs to be != the current district. Was seeing if they were the same and then executing the statements inside\
+BUG FIX: changed boolean expression != \cf2 \cb3 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 \cb3 \
+7)\
+\pard\pardeftab720\sl280\partightenfactor0
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 FILE OR CLASS NAME: District.java\
+METHOD: setTimBot()\
+LINE #s: line 69\
+BUG DESCRIPTION: \cf4 \cb5 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 Tim bot needs to not have a bot in that location already to be placed. However the logic behind this is that the resident and bot is null.\
+The bot cannot be null to be assigned as the resident bot. \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+BUG FIX: \cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 Swapped the boolean assessment of bot == null to bot != null. \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 \cb3 \
+8)\
+FILE OR CLASS NAME: \cf4 \cb5 DohNat.java\cf2 \cb3 \
+METHOD: \cf4 \cb5 getDistrict() \cf2 \cb3 \
+LINE #s:\cf4 \cb5 line 164\cf2 \cb3 \
+BUG DESCRIPTION: \cf4 \cb5 he height had the wrong variable after the modulo operation \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf4 y = ( y + height ) % width; this caused the coordinate edges to not be maintained by the proper numbers\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 \cb3 BUG FIX: \cf4 \cb5 y = ( y + height ) % height;\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf4 This fix allows for the coordinates edges to be maintained by the proper numbers. \cf2 \cb3 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 \cb3 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 \cb3 9) \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf4 \cb5 FILE OR CLASS NAME: DohNat.java\
+METHOD: doHarvestPhase() \
+LINE #s:  line 140-141\
+BUG DESCRIPTION:  The area where they were looking was going out of bounds and thus harvest phase could not be completed properly. Logic error that was found was \
+The array tried to go past its index bounds. For loops conditions.  \
+BUG FIX: changed the. <= operator to just < so the limits would not be breached \cf2 \cb3 \
+\cf4 \cb5 \
+10) \
+FILE OR CLASS NAME: District.java \
+METHOD: doMovePhase()\
+LINE #s: 194 \
+BUG DESCRIPTION: the direction was using the boolean operations (==) for CURRENT and that will not allow them to move as they will always be in current and direction almost never current\
+They had to use != current to execute the next move \
+BUG FIX: replaced the boolean operation of == with != \
+\
+11)\
+FILE OR CLASS NAME: DohNat.java\
+METHOD: doMovePhase()\
+LINE #s: 94\
+BUG DESCRIPTION: The for loop condition for y started at 1 however it needs to start in the same place as x as it is a square grid. \
+BUG FIX: changed y = 1 to y = 0\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 \cb3 \
+]}
