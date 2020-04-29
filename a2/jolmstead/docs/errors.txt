@@ -1,0 +1,96 @@
+Bug Report
+==========
+
+For each bug, please provide the following information:
+  - Class name
+  - Method name
+  - Test method name
+  - Message produced by the test method
+
+Example:
+Error 0:
+  Class: District
+  Method: setTimBot()
+  Test Method: setTimBot_districtNotEmpty()
+  Message: setTimBot() on non-empty district returned true
+
+Error 1:
+  Class: TimBot
+  Method: (Constructor and getMethod)
+  Test Method: getID
+  Message:  The ID for this bot does not fit the expected boundaries ==> expected: <true> but was: <false>
+  Supposed to be greater than 0
+
+  Error 2:
+ - Class name TimBot
+  - Method name HarvestSpresso
+  - Test method name harvestsprsso
+  - Message produced by the test method : You revived a dead bot! ==> expected: <false> but was: <true>
+  Dead bots should not be able to harvest and resurrect them selves!
+
+  Error 3:
+  class: Tim bot
+  method: harvest spresso
+  test method: harvestspresso
+  message: the energy increased past the cap! went past 99 to 108
+
+    ---- from this >>> if( energyLevel < 99 ) {
+
+    I fixed the < sign to be >. in the code
+
+      energyLevel = 99; < sets to cap again if too big
+    }
+
+  Error 4:
+  Class SpressoBot
+  method: getnextmove
+  test: getnextmoveenergy
+  message: energy was taken despite not moving from the current district. energy should
+  only be taken when moving from the current district
+
+Error 5:
+
+    class Angry Bot
+    method: getnextmove
+    test:getnextmove
+    message: A dead bot moved despite it not having energy! he dead bot moved and it was scary ==>
+                                                            Expected :0
+                                                            Actual   :1
+
+    Error 6:
+    class: Angrybot
+    method: getnextmove
+    test: Getnextmove energy
+    message:                           energy was taken despite not moving from the current district ==>
+                                       Expected :99
+                                       Actual   :98
+
+
+Error 7:
+Class SpressoBot
+method getnextmove
+test: get nextmove
+msg: not the right size array, bots must be sensed in all areas
+
+
+Errors 8:
+Class ChickenBot
+method: getmove
+testgetmove
+msg:rg.opentest4j.AssertionFailedError: Not the right size array ==> expected: <true> but was: <false>
+
+Error 9:
+class: BullyBot
+method:firecanon
+testfire canon
+messge Not the right size array ==> expected: <true> but was: <false>
+
+Error 10:
+class Angry bot
+method nextmove
+ test getnextnove
+ messge :org.opentest4j.AssertionFailedError: Not the right size array ==> expected: <true> but was: <false>
+
+
+
+*********** ADD AS MANY MORE AS NEEDED *******************
