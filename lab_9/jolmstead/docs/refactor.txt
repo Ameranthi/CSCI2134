@@ -1,0 +1,52 @@
+List of Refactorings
+====================
+
+Name/Banner# of Developer 1: Julia Olmstead
+Name/Banner# of Developer 2: I'm alone and abandoned person so lol
+
+Refactorings:
+=============
+
+0. EXAMPLE:  
+   File: SpressoBot.java, ChickenBot.jaba, AngryBot.java, TimBot.java
+   Location (method/approx. line #): getNextMove()
+   Issue Idetified: Common code to check if move will result in 
+                    energy use and decrement energyLevel if that 
+                    is the case
+   Description of fix:  Push the common code into TimBot.java, creating a
+                        protected method to be used instead.
+   Implemented: Yes (Completely, all tests pass)
+
+1. File: SpressoBot.java, ChickenBot.jaba, AngryBot.java, TimBot.java
+   Location (method/approx. line #): getNextMove(), 71 
+   Issue Idetified: Common code to find the minimum move
+   Description of fix: Push the common code into TimBot.java, creating a
+                        protected method to be used instead.
+   Implemented:Yes (Completely, all tests pass)
+
+2. File: SpressoBot.java and ChickenBot.java
+   Location (method/approx. line #): getNextMove(), 48 & 49
+   Issue Idetified: code in chicken and spressoBot have int values without 				an const/final int variable for them 
+   Description of fix: made them both have variable attached to the int 				values that were being used in the loop 				possibilities 
+   Implemented: no
+
+3. File: SpressoBot.java and ChickenBot.java
+   Location (method/approx. line #): getNextMove() ,  52
+   Issue Idetified: common code to loop through the scores and find all 			possibilities
+   Description of fix: push the common code into TimBot and create a protected void loopForPossibilities()method to be used instead
+   Implemented: no
+
+4. File: BullyBot.java
+   Location (method/approx. line #): fireCanon(), 50-53
+   Issue Idetified: code block that assesses if the count is greater than the energy available and required energy to start up. 
+   Description of fix: push code block to TimBot and create final variables for the if statements (energyLevel - 2) 2 should have a final variable attached to it. 
+    
+   Implemented:no
+
+5. File:
+   Location (method/approx. line #):
+   Issue Idetified:
+   Description of fix:
+   Implemented:
+
+
