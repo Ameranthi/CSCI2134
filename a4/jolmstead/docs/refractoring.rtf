@@ -1,0 +1,89 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww15520\viewh10760\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+List of Refactorings\
+====================\
+Name/Banner# of Developer: Julia Olmstead B00780639\
+====================\
+\
+1.  \
+   File: District.java \
+   Location (method/approx. line #): hasSpresso/earlistHarvest 187 \
+   Issue Identified: Inappropriate naming of method as well as no longer useful return for the new plan classes\
+   Description of fix: changed the naming and fixed return statement to give the minimum amount of rounds a plant will take to fully mature in that district \
+   Implemented: yes \
+\
+2. File: District (taking care of too much)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0    Location (method/approx. line #): \
+   Issue Identified: is taking care of plants when it should just set them up and not take care of jolts etc \
+   Description of fix: make plant class take care of jolts and create getters and setters for the plants variables \
+   Implemented: yes \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 3.  File: SpressoBot.java, ChickenBot.jaba, AngryBot.java, TimBot.java\
+   Location (method/approx. line #): getNextMove(), 71 \
+   Issue Idetified: Common code to find the minimum move\
+   Description of fix: Push the common code into TimBot.java, creating a\
+                        protected method to be used instead.\
+   Implemented:Yes (Completely, all tests pass)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 4.File: SpressoBot.java and ChickenBot.java\
+   Location (method/approx. line #): getNextMove() ,  52\
+   Issue Idetified: common code to loop through the scores and find all 			possibilities\
+   Description of fix: push the common code into TimBot and create a protected void loopForPossibilities()method to be used instead\
+   Implemented: no\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 5.BullyBot.java\
+   Location (method/approx. line #): fireCanon(), 50-53\
+   Issue Idetified: code block that assesses if the count is greater than the energy available and required energy to start up. \
+   Description of fix: push code block to TimBot and create final variables for the if statements (energyLevel - 2) 2 should have a final variable attached to it. \
+Implemented: no\
+\
+6. Open/Close Principle\'95\
+    File: TimSim\
+    Location: main(), TimSim method\
+    Issue: Any time a new TimBot is added, this code will need to be changed.\'95\
+    Fix: Use a Factory pattern to encapsulate the instantiation of TimBots.\
+    Implemented: attempted \
+\
+7. File: SpressoBot.java, ChickenBot.jaba, AngryBot.java, TimBot.java\
+   Location (method/approx. line #): getNextMove()\
+   Issue Idetified: Common code to check if move will result in \
+                    energy use and decrement energyLevel if that \
+                    is the case\
+   Description of fix:  Push the common code into TimBot.java, creating a\
+                        protected method to be used instead.\
+   Implemented: Yes (Completely, all tests pass)\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}
